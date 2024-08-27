@@ -5,6 +5,7 @@ import java.util.List;
 import com.example.demo.model.Museum;
 
 public interface MuseumService {
+	
 	List<Museum>card_details();
 	Museum fullDetails(int mid);
 	//admin

@@ -1,8 +1,12 @@
 package com.example.demo.controller;
 
+import java.util.List;
+
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -25,5 +29,13 @@ public class PackageController {
 		return pser.viewDetailedPackage(pid);
 	}
 	
-	
+	   @GetMapping("/{mid}/packages")
+	    public List<Package> getPackagesByMuseumId(@PathVariable("mid") int mid) {
+	        return pser.getPackagesByMuseumId(mid);
+	    }
+    
+    @PostMapping("/create")
+    public String createPackage(@RequestBody Package p) {
+    	return pser.createPackage(p);
+    }
 }

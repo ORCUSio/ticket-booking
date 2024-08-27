@@ -4,6 +4,8 @@ import java.util.List;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 
 @Entity
 public class Package {
@@ -17,6 +19,20 @@ public class Package {
 	private int availablity;
 	private String package_type;
 	private String termsandc;
+    @ManyToOne
+    @JoinColumn(name = "mid")  // Foreign key column in the Package table
+    private Museum museum;
+    
+	public Package(Museum museum) {
+		super();
+		this.museum = museum;
+	}
+	public Museum getMuseum() {
+		return museum;
+	}
+	public void setMuseum(Museum museum) {
+		this.museum = museum;
+	}
 	public int getPid() {
 		return pid;
 	}

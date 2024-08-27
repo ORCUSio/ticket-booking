@@ -1,7 +1,11 @@
 package com.example.demo.model;
 
+import java.util.Set;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -27,6 +31,20 @@ public class Museum {
     private String fbId;
     private String websiteId;
     private String ytId;
+    
+//    @OneToMany
+//    @JoinColumn("")
+//    private Set<Package> packages;
+//	public Museum(Set<Package> packages) {
+//		super();
+//		this.packages = packages;
+//	}
+//	public Set<Package> getPackages() {
+//		return packages;
+//	}
+//	public void setPackages(Set<Package> packages) {
+//		this.packages = packages;
+//	}
 	public int getMid() {
 		return mid;
 	}
